@@ -1,0 +1,46 @@
+.container {
+    padding: 0.5rem;
+    display: grid;
+    justify-content: space-around;
+
+    /* color: white;
+    margin: 16px;
+    padding: 16px; */
+}
+
+.container 
+img svg 
+{
+    display: grid;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid darkgray;
+    border-radius: 8%; */
+  }
+  
+  .galleryTitle {
+    color: aliceblue;
+    margin: 8px;
+    padding: 8px;
+    display: grid;
+    justify-content: space-around;
+  }
+  .gallery-grid   {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding:16px;
+    margin: 16px;
+    gap: 8px;
+    justify-content: center;
+    
+  }
+
+  .image-item {
+    border: 0.2rem solid darkgrey;
+    border-radius: 5%;
+    object-fit: cover;
+  }
+

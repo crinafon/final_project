@@ -1,0 +1,15 @@
+.footerContainer {
+    color: aliceblue;
+    margin: 4px;
+    padding: 8px;
+    border-top: 2px solid aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: stretch;
+    background-color: #282626;
+    font-size: smaller;
+    gap: 10px;
+}
+

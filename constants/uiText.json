@@ -1,0 +1,61 @@
+{
+    "title": {
+        "ro": "Casuta de munte",
+        "en": "Little Mountain House"
+    },
+
+    "homePageLink": {
+        "ro": "Acasa",
+        "en": "Home"
+    },
+
+    "aboutPageLink": {
+        "ro": "Despre Noi",
+        "en": "About Us"
+    },
+
+    "galleryPageLink": {
+        "ro": "Galerie Foto",
+        "en": "Photo Gallery"
+    },
+
+    "caruselTitleSummer": {
+        "ro": "Momente de vara",
+        "en": "Warm Moments"
+    },
+
+    "caruselTitleWinter": {
+        "ro": "Vibratii reci",
+        "en": "Chill Vibes"
+    },
+
+    "caruselTitleInside": {
+        "ro": "Va rugam, intrati!",
+        "en": "Please, come on in!"
+    },
+
+    "buttonLabelReservations": {
+        "ro": "Rezevă o cameră",
+        "en": "Make a reservation"
+    },
+    "reservationForm": {
+        "ro": {
+            "email": "Adresa ta de email",
+            "name": "Numele tau"
+        },
+        "en": {
+            "email": "Email Address",
+            "name": "Full name"
+        }
+    },
+    "feedbackForm": {
+        "ro": {
+            "": "Adresa ta de email",
+            "name": "Numele tau"
+        },
+        "en": {
+            "email": "Email Address",
+            "name": "Full name"
+        }
+    }
+}
