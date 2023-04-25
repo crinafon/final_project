@@ -1,5 +1,4 @@
 export const images = [
-    
     {src: 'bedroom01.jpg',
     title: 'First bedroom '
     },
