@@ -77,7 +77,7 @@ const Gallery = () => {
         touchMoves = [];
     }
 
-    console.log(loadingImage)
+    // console.log(loadingImage)
 
   return (
     <>
@@ -91,15 +91,15 @@ const Gallery = () => {
               src={`/photo/${image.src}`} 
               alt = 'image-item' 
               width={250} height={200}
-              onClick={() => setSelectedImg(index)}/>
+              onClick={() => setSelectedImg(index)} />
         ))}
-
+        
       </div>
     </div>
      {selectedImg !== undefined && <div className={styles["galery-img-zoom-container"]}>
                 <button
                     className="btn-close btn-close-white"
-                    style={{ position: 'absolute', top: 20, right: 20 }}
+                    style={{ position: 'absolute', bottom: 40, right: 40 }}
                     onClick={() => setSelectedImg(undefined)}></button>
 
                 <button onClick={decrementWithAnimation} className={styles["galery-img-zoom-nav-prev"]}>&#x27A4;</button>
@@ -114,7 +114,8 @@ const Gallery = () => {
                         onTouchMove={handleOnTouchMove}
                         onTouchEnd={handleOnTouchEnd}
                     />
-                    {loadingImage && <Spinner animation="border" role="status" variant="light" style={{position: 'absolute'}}>
+                    {loadingImage && <Spinner animation="border" role="status" variant="light" 
+                    style={{position: 'absolute'}}>
                         <span className="visually-hidden">Loading...</span>
                     </Spinner>}
                 </div>

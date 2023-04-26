@@ -11,6 +11,10 @@ export default function Home() {
   const handleRedirect = () => {
     router.push('/contact');
   }
+
+  const handleRedirectToPrice = () => {
+    router.push('/about');
+  }
   return (
     <>
       {/* // <Carusel />  */}
@@ -28,21 +32,29 @@ export default function Home() {
           <h1>Wellcome! </h1>
           <h2 style={{fontWeight: 'lighter'}}>The Little Mountain House</h2>
           <h3>A cabin, a small vacation home located in the heart of Apuseni Mountains, Romania.</h3>
-          <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+         
+         <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Aenean neque mi, porta at dapibus id, tempor in neque. 
             Mauris massa erat, iaculis aliquam tellus ac, malesuada dapibus felis. 
             Fusce dapibus ultricies ipsum, quis hendrerit velit consectetur sed. 
             Donec mollis sapien vel dui consectetur, ac rhoncus nunc lobortis. 
             Fusce in libero ac sem consequat vehicula a ut purus. 
-            Nulla facilisi. <button onClick={handleRedirect}> Book Now! </button> </p>
+            Nulla facilisi.
+          </p>
+          <div className={styles.btns}>
+            <button 
+            className={styles.btn} 
+            onClick={handleRedirect} > <span> Book Now!</span> </button> 
+            <button 
+            className={styles.btn} 
+            onClick={handleRedirectToPrice} > <span> Prices & more</span> </button>
+          </div>
         </article>
         
         <video src="/video/introVideo.mp4" autoPlay muted 
         className={styles["home-video"]}
           loop />
       </div>
-
-
     </>
   )
 }

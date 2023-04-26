@@ -80,7 +80,6 @@ img svg
   .galery-img-zoom-content img {
     margin: auto;
     display: block;
-
     max-height: 90vh;
     position: relative;
     left: 0;

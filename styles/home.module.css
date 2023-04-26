@@ -9,9 +9,61 @@
 .home-container {
     display: flex;
     justify-content: center;
-    max-width: 60rem;
-    margin: auto
+    max-width: 70rem;
+    margin: auto;
 }
+
+.btn {
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b6b95;
+    padding: 4px;
+}
+
+
+.btns {
+  display: grid;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #c4b2e0;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
+  max-height: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+.btns span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btns span ::after {
+  content: \00bb;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btns:hover  span {
+    padding-right: 25px;
+  }
+  
+.btns:hover  span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 @media screen and (max-width: 600px) {
     .home-video {
