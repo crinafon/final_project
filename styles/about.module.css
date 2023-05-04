@@ -1,47 +1,87 @@
 
 .aboutContainer {
-    display: block;
+    display: flex;
+    align-content: space-between;
+    align-items: stretch;
     color: aliceblue;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     padding: 28px;
-        
 }
+
 .image-item {
-    border: 0.2rem solid darkgrey;
-    border-radius: 5%;
+    border: 0.5rem solid rgb(66, 59, 66);
+    border-radius: 28px;
     object-fit: cover;
     margin: 4px;
     width: 200px;
-    height: 200px
+    height: 200px;
   }
-
-  /* .galery-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 320px);
-    grid-gap: 1rem;
-    justify-content: center;
-    margin: 1rem;
-  }
-  
-  .galery-wrapper img {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 5px;
-  } */
 
 .sectionContainer{
-    display: inline-flex;
+    padding: 8px;
+    display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     align-content: center;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: 10px;
     border: 2px solid white;
-    background-color: rgb(139, 124, 152);
+    background-image: url('../public/photo/effect.jpg');
+    object-fit: cover;
+    /* background-color: rgb(139, 124, 152); */
     border-radius: 5px;
-    width: 40%;
+    width: 100%;
 }
+
+.sectionTitle {
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+  background-color:rgb(86, 74, 97) ;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 100%;
+  font-size: large ;
+}
+
+.facilitiesTable {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  background-image: linear-gradient( #000, #8b6a82);
+  margin: 4px;
+  border-radius: 8px;
+  max-width: 75%;
+}
+
+
+.calendar-wraper {
+  max-width: 90%;
+  color: black;
+}
+
+.calendar-container {
+  color:rgb(43, 35, 35);
+  text-decoration: none;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+
+.calendar{
+  background-color: rgb(165, 139, 190);
+}
+
+@media screen and (max-width: 600px) {
+  .aboutContainer{
+    display: grid;
+  }
+  .sectionContainer{
+    width: 85%;
+  }
+
+  .facilitiesList {
+    width: 100%;
+  }
+}
+  

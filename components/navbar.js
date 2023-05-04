@@ -11,14 +11,14 @@ function ResponsiveNavBar() {
 
   const [navState, setNavState] = useState(false);
   return (
-    <Navbar bg="dark" variant="dark" expand="md" expanded={navState} onToggle={() => setNavState(true)}
+    <Navbar bg="dark" variant="dark" expand="md" expanded={navState} onToggle={() => setNavState(!navState)}
     fixed='top'
     style={{borderBottom: '2px solid aliceblue'}}>
       <Container >
         <Navbar.Brand href="/">The Little Mountain House</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" >
             <Link href="/" className="nav-link" onClick={() => setNavState(false)}>Home</Link>
             <Link href="/gallery" className="nav-link" onClick={() => setNavState(false)}>Gallery</Link>
             <Link href="/contact" className="nav-link" onClick={() => setNavState(false)}>Contact</Link>

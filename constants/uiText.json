@@ -19,21 +19,6 @@
         "en": "Photo Gallery"
     },
 
-    "caruselTitleSummer": {
-        "ro": "Momente de vara",
-        "en": "Warm Moments"
-    },
-
-    "caruselTitleWinter": {
-        "ro": "Vibratii reci",
-        "en": "Chill Vibes"
-    },
-
-    "caruselTitleInside": {
-        "ro": "Va rugam, intrati!",
-        "en": "Please, come on in!"
-    },
-
     "buttonLabelReservations": {
         "ro": "Rezevă o cameră",
         "en": "Make a reservation"
@@ -45,7 +30,7 @@
         },
         "en": {
             "email": "Email Address",
-            "name": "Full name"
+            "name": "Full Name"
         }
     },
     "feedbackForm": {

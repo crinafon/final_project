@@ -14,7 +14,6 @@ const Gallery = () => {
 
     const bigImageRef = useRef();
 
-    const photoArray = new Array(images.qty).fill(images.baseFotoName).map((elem, index) => elem + index);
 
     let toushStart = false;
     let touchMoves = [];
@@ -39,7 +38,7 @@ const Gallery = () => {
         setTimeout(() => {
             setAnimHideImg(0);
             setAnimMoveImg(imgWidth);
-            if (selectedImg === photoArray.length - 1) setSelectedImg(0);
+            if (selectedImg === images.length - 1) setSelectedImg(0);
             else setSelectedImg(prev => prev + 1);
         }, 250);
 
@@ -55,7 +54,7 @@ const Gallery = () => {
         setTimeout(() => {
             setAnimHideImg(0);
             setAnimMoveImg(-imgWidth);
-            if (selectedImg === 0) setSelectedImg(photoArray.length - 1);
+            if (selectedImg === 0) setSelectedImg(images.length - 1);
             else setSelectedImg(prev => prev - 1);
         }, 250);
 
@@ -77,7 +76,7 @@ const Gallery = () => {
         touchMoves = [];
     }
 
-    // console.log(loadingImage)
+//  console.log(selectedImg)
 
   return (
     <>
@@ -99,7 +98,7 @@ const Gallery = () => {
      {selectedImg !== undefined && <div className={styles["galery-img-zoom-container"]}>
                 <button
                     className="btn-close btn-close-white"
-                    style={{ position: 'absolute', bottom: 40, right: 40 }}
+                    style={{ position: 'absolute', top: 40, right: 40 }}
                     onClick={() => setSelectedImg(undefined)}></button>
 
                 <button onClick={decrementWithAnimation} className={styles["galery-img-zoom-nav-prev"]}>&#x27A4;</button>
@@ -108,7 +107,7 @@ const Gallery = () => {
                         onLoad={() => setLoadingImage(false)}
                         src={`/photo/${images[selectedImg].src}`}
                         alt="galery item"
-                        style={{ left: animMoveImg, opacity: animHideImg, visibility: loadingImage ? 'hidden' : 'visible' }}
+                        style={{ left: animMoveImg, opacity: animHideImg, visibility: loadingImage ? 'hidden' : 'visible', maxWidth: '90%' }}
                         ref={bigImageRef}
                         onTouchStart={handleOnTouchStart}
                         onTouchMove={handleOnTouchMove}

@@ -6,11 +6,21 @@
     border-radius: 10%;
 }
 
-.home-container {
+
+.home-container{
     display: flex;
     justify-content: center;
+    
+    color: lightgray;
     max-width: 70rem;
-    margin: auto;
+    margin: 16px;
+    padding: 4px;
+    border-left: 2px solid lightgray
+}
+
+.rightSection {
+  width: 50%;
+  height: 80%
 }
 
 .btn {

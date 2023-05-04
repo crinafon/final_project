@@ -2,10 +2,14 @@
     margin: auto; 
     padding: 25px;
     border: 4px solid grey;
+    color: rgb(182, 208, 189);
     display: grid; 
-    background-image: url(
-    "https://scontent.fclj4-1.fna.fbcdn.net/v/t39.30808-6/296826278_138417292207612_5098315808071624495_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Ou1JO0yMm6kAX8aMH2B&_nc_ht=scontent.fclj4-1.fna&oh=00_AfCJ8dj57VZNHJL1-epUc95yf5iUSkt2H4VircVPOgv1bQ&oe=644AE656"
-    );
+    background-image: linear-gradient( #000, #8b6a82);
+    
+    /* url(
+    "https://scontent.fclj4-1.fna.fbcdn.net/v/t39.30808-6/296826278_138417292207612_5098315808071624495_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Ou1JO0yMm6kAX8aMH2B&_nc_ht=scontent.fclj4-1.fna&oh=00_AfCJ8dj57VZNHJL1-epUc95yf5iUSkt2H4VircVPOgv1bQ&oe=644AE656" */
+    /* ); */
+    
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 35rem;
