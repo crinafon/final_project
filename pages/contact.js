@@ -5,10 +5,10 @@ import Location from "../components/location";
 
 const Contact = () => {
     return (
-        <>
+        <div className="m-auto">
         <ReservationForm/>
         <Location/>
-        </>
+        </div>
     
     )
 }

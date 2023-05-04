@@ -4,8 +4,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  margin-top: 50px;
-  
+  color: white;
+  background: rgb(54, 54, 54)!important;
+  min-height: 100vh;
   }
 
 a {
@@ -19,6 +20,18 @@ a {
 
 .fixed-top {
   z-index: 1!important;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: auto;
+  display: flex;
+  padding-top: 4rem;
 }
 
 /* img, svg {

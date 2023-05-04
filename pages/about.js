@@ -1,6 +1,5 @@
-import React from "react";
 import Calendar from 'react-calendar';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/about.module.css";
 import { FaBed } from 'react-icons/fa';
 import { MdCottage, MdSoupKitchen, MdBathroom, MdOutdoorGrill } from 'react-icons/md';
@@ -14,25 +13,39 @@ const About = () => {
     const [date, setDate] = useState(new Date());
     const [disabledDates, setDisabledDates] = useState([]);
 
-
+    useEffect(() => {
+        async function fetchBooking(){
+            try{
+                const res = await fetch('/api/booking');
+                const data = await res.json();
+                if(data.status === "ok")setDisabledDates(data.data)
+            } catch(error) {
+                console.log(error)
+            }
+        }
+        fetchBooking()
+    }, [])
     const isSameDay = (a, b) => {
         const first = new Date(a);
         const sec = new Date(b);
         return first.getMonth() === sec.getMonth() && first.getDate() === sec.getDate();
     }
     const disableTiles = (date, view) => {
-        // Check if a date React-Calendar wants to check is on the list of disabled dates
-        const found = disabledDates.find(dDate => isSameDay(dDate, date.date));
-        if (found) console.log(found);
-        return found
-
+        let val = null;
+        const formatedDate = new Date(date.date);
+        const day = formatedDate.getDate();
+        const month = formatedDate.getMonth();
+        const year = formatedDate.getFullYear();
+        console.log(day, month, year)
+        disabledDates.forEach(rezervation => {
+            if(rezervation.startDate.month - 1 === month && rezervation.startDate.year === year && (rezervation.startDate.day <= day && rezervation.endDate.day >= day)){
+                val = date.date;
+            }
+        })
+        //console.log(val)
+        return val;
     }
 
-    const handleSelectDay = (selectedDay) => {
-        console.log(selectedDay)
-        setDate(selectedDay)
-        disabledDates.push(selectedDay)
-    }
 
     return (
         <>
@@ -45,19 +58,19 @@ const About = () => {
                             <strong>Facilities</strong>
                             <p style={{ fontWeight: 'lighter' }}>What to expect when you book a vacation or a weekend at the cabin...</p>
                         </div>
-                        <table className={styles.facilitiesTable}>
-                            <tr style={{padding: '16px'}}> You can feel, breathe, hear and smell the forest and and the Mountains. 
-                                Also you can have a home-like experience as we like to let our guests to have self check-in and self check-out. 
-                                You dont`t have to worry about hot water, towels, higienic items and kichen dishes and condiments. you will find all of those and more at the house. </tr>
-                            <tr> <MdCottage />Four bedroom house  </tr>
-                            <tr> <FaBed />Three duble beds and one couch</tr>
-                            <tr> <BsFillPeopleFill /> Suitable for 8-9 guests</tr>
-                            <tr> <MdSoupKitchen />Fully equiped kitchen </tr>
-                            <tr> <MdBathroom /> Two baths </tr>
-                            <tr> <MdOutdoorGrill />Outside terrace with grill and dining table</tr>
-                            <tr> <GiCelebrationFire />Bonefire outdoor space </tr>
-                            <tr> <GiHighGrass />Spacious yard sorunded by fence</tr>
-                        </table>
+                        {/*<table className={styles.facilitiesTable}>*/}
+                        {/*    <tr style={{padding: '16px'}}> You can feel, breathe, hear and smell the forest and and the Mountains. */}
+                        {/*        Also you can have a home-like experience as we like to let our guests to have self check-in and self check-out. */}
+                        {/*        You dont`t have to worry about hot water, towels, higienic items and kichen dishes and condiments. you will find all of those and more at the house. </tr>*/}
+                        {/*    <tr> <MdCottage />Four bedroom house  </tr>*/}
+                        {/*    <tr> <FaBed />Three duble beds and one couch</tr>*/}
+                        {/*    <tr> <BsFillPeopleFill /> Suitable for 8-9 guests</tr>*/}
+                        {/*    <tr> <MdSoupKitchen />Fully equiped kitchen </tr>*/}
+                        {/*    <tr> <MdBathroom /> Two baths </tr>*/}
+                        {/*    <tr> <MdOutdoorGrill />Outside terrace with grill and dining table</tr>*/}
+                        {/*    <tr> <GiCelebrationFire />Bonefire outdoor space </tr>*/}
+                        {/*    <tr> <GiHighGrass />Spacious yard sorunded by fence</tr>*/}
+                        {/*</table>*/}
                         <img src="/photo/summ11.jpg"
                             className={styles['image-item']} />
                     </section>
@@ -75,9 +88,9 @@ const About = () => {
                                 fontStyle: 'italic',
                             }}>*You can only book a minimum of 2 night for the entire property</p>
                             <ul>
-                                <tr>May - September: 550 RON/night </tr>
-                                <tr>Octomber - April: 750 RON/night </tr>
-                                <tr>Legal holidays: minimun book is of 3 nights plus 20% normal price</tr>
+                                <li>May - September: 550 RON/night </li>
+                                <li>Octomber - April: 750 RON/night </li>
+                                <li>Legal holidays: minimun book is of 3 nights plus 20% normal price</li>
                             </ul>
                             <p style={{
                                 fontStyle: 'italic',
@@ -94,9 +107,10 @@ const About = () => {
                             <div 
                             // suppressHydrationWarning={true} 
                             className={styles['calendar-container']}>
-                                <Calendar 
+                                <Calendar
                                     className={styles['react-calendar']}
-                                    onChange={handleSelectDay} value={date}
+                                    //onChange={handleSelectDay}
+                                    value={Date()}
                                     tileDisabled={disableTiles} />
                             </div>
                             <p className='text-center' style={{color: 'white'}}>

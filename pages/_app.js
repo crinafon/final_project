@@ -7,9 +7,9 @@ import * as React from 'react';
 import { NextUIProvider } from '@nextui-org/react';
 
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => {
-  //   import("bootstrap/dist/js/bootstrap");
-  // }, []);
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
+  }, []);
 
   return (
     // <NextUIProvider>

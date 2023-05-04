@@ -16,7 +16,7 @@ export default function Home() {
     <><div className={styles["home-container"]} >
       
       <div className={styles.leftSection}>
-        <article>
+        <article style={{lineHeight: 3}}>
           <h1>Go outside and feel the Mountains! </h1>
           <h2 style={{ fontWeight: 'lighter', }}>Get inside and tell the stories!</h2>
           <h2 style={{ fontWeight: 'lighter', fontStyle: 'oblique' }}>Căsuța de Munte</h2>
