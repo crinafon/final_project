@@ -1,47 +1,18 @@
-
-
 const rezervari = [
   {
     nume: "Cristian Scarlat",
     nrPers: 2,
-    startDate: {
-      day: 11,
-      month: 5,
-      year: 2023
-    },
-    endDate: {
-      day: 14,
-      month: 5,
-      year: 2023
-    }
+    date: ['11/05/2023', '12/05/2023', '13/05/2023', '14/05/2023', '15/05/2023', '16/05/2023']
   },
   {
     nume: "Andreea ",
     nrPers: 3,
-    startDate: {
-      day: 15,
-      month: 5,
-      year: 2023
-    },
-    endDate: {
-      day: 20,
-      month: 5,
-      year: 2023
-    }
+    date: ['15/06/2023', '16/06/2023', '17/06/2023', '18/06/2023', '19/06/2023', '20/06/2023']
   },
   {
     nume: "Blonda ",
     nrPers: 1,
-    startDate: {
-      day: 30,
-      month: 5,
-      year: 2023
-    },
-    endDate: {
-      day: 4,
-      month: 6,
-      year: 2023
-    }
+    date: ['10/06/2023', '11/06/2023', '12/06/2023', '13/06/2023', '14/06/2023']
   },
   {
     nume: "Blonda ",
@@ -51,13 +22,12 @@ const rezervari = [
 ]
 
 function get(req, res) {
-  console.log("get");
   res.status(200).json({status: 'ok', data: rezervari})
 }
 
 
 export default (req, res) => {
-  switch(req.method){
+  switch (req.method) {
     case 'GET':
       get(req, res);
       break;

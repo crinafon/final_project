@@ -5,7 +5,7 @@ import { FaBed } from 'react-icons/fa';
 import { MdCottage, MdSoupKitchen, MdBathroom, MdOutdoorGrill } from 'react-icons/md';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import { GiCelebrationFire, GiHighGrass } from 'react-icons/gi'
-// import 'react-calendar/dist/Calendar.css';
+import 'react-calendar/dist/Calendar.css';
 
 
 const About = () => {
@@ -33,16 +33,14 @@ const About = () => {
     const disableTiles = (date, view) => {
         let val = null;
         const formatedDate = new Date(date.date);
-        const day = formatedDate.getDate();
-        const month = formatedDate.getMonth();
+        const day = formatedDate.getDate() < 10 ? `0${formatedDate.getDate()}` : formatedDate.getDate();
+        const month = formatedDate.getMonth()+1 < 10 ? `0${formatedDate.getMonth()+1}` : formatedDate.getMonth()+1;
         const year = formatedDate.getFullYear();
-        console.log(day, month, year)
-        // disabledDates.forEach(rezervation => {
-        //     if(rezervation.startDate.month - 1 === month && rezervation.startDate.year === year && (rezervation.startDate.day <= day && rezervation.endDate.day >= day)){
-        //         val = date.date;
-        //     }
-        // })
-        console.log(val)
+        disabledDates.forEach(rezervation => {
+            if(rezervation.date.includes(`${day}/${month}/${year}`)) {
+                val = date.date;
+            }
+        })
         return val;
     }
 
