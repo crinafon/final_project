@@ -37,12 +37,12 @@ const About = () => {
         const month = formatedDate.getMonth();
         const year = formatedDate.getFullYear();
         console.log(day, month, year)
-        disabledDates.forEach(rezervation => {
-            if(rezervation.startDate.month - 1 === month && rezervation.startDate.year === year && (rezervation.startDate.day <= day && rezervation.endDate.day >= day)){
-                val = date.date;
-            }
-        })
-        //console.log(val)
+        // disabledDates.forEach(rezervation => {
+        //     if(rezervation.startDate.month - 1 === month && rezervation.startDate.year === year && (rezervation.startDate.day <= day && rezervation.endDate.day >= day)){
+        //         val = date.date;
+        //     }
+        // })
+        console.log(val)
         return val;
     }
 
@@ -58,19 +58,19 @@ const About = () => {
                             <strong>Facilities</strong>
                             <p style={{ fontWeight: 'lighter' }}>What to expect when you book a vacation or a weekend at the cabin...</p>
                         </div>
-                        {/*<table className={styles.facilitiesTable}>*/}
-                        {/*    <tr style={{padding: '16px'}}> You can feel, breathe, hear and smell the forest and and the Mountains. */}
-                        {/*        Also you can have a home-like experience as we like to let our guests to have self check-in and self check-out. */}
-                        {/*        You dont`t have to worry about hot water, towels, higienic items and kichen dishes and condiments. you will find all of those and more at the house. </tr>*/}
-                        {/*    <tr> <MdCottage />Four bedroom house  </tr>*/}
-                        {/*    <tr> <FaBed />Three duble beds and one couch</tr>*/}
-                        {/*    <tr> <BsFillPeopleFill /> Suitable for 8-9 guests</tr>*/}
-                        {/*    <tr> <MdSoupKitchen />Fully equiped kitchen </tr>*/}
-                        {/*    <tr> <MdBathroom /> Two baths </tr>*/}
-                        {/*    <tr> <MdOutdoorGrill />Outside terrace with grill and dining table</tr>*/}
-                        {/*    <tr> <GiCelebrationFire />Bonefire outdoor space </tr>*/}
-                        {/*    <tr> <GiHighGrass />Spacious yard sorunded by fence</tr>*/}
-                        {/*</table>*/}
+                        <ul className={styles.facilitiesList}>
+                           <li style={{padding: '16px'}}> You can feel, breathe, hear and smell the forest and and the Big Mountains.
+                               Also you can have a home-like experience as we like to let our guests to have self check-in and self check-out.
+                             You dont`t have to worry about hot water, towels, higienic items and kichen utensils or even condiments. You will find all of those and more at the house. </li>
+                           <li> <MdCottage />Four bedroom house  </li>
+                          <li> <FaBed />Three duble beds and one couch</li>
+                         <li> <BsFillPeopleFill /> Suitable for 8-9 guests</li>
+                            <li> <MdSoupKitchen />Fully equiped kitchen </li>
+                           <li> <MdBathroom /> Two baths </li>
+                           <li> <MdOutdoorGrill />Outside terrace with grill and dining table</li>
+                            <li> <GiCelebrationFire />Bonefire outdoor space </li>
+                           <li> <GiHighGrass />Spacious yard sorunded by fence</li>
+                        </ul>
                         <img src="/photo/summ11.jpg"
                             className={styles['image-item']} />
                     </section>
@@ -81,13 +81,15 @@ const About = () => {
                         </div>
                         <div style={{
                             display: 'grid',
-                            justifyItems: 'center'
+                            justifyItems: 'center',
+                            textAlign: 'center',
+                            color: 'rgb(9, 9, 9, 0.8)'
                         }}>
                             <strong>Our prices may vary acording to different seasons or holidays: </strong>
                             <p style={{
                                 fontStyle: 'italic',
                             }}>*You can only book a minimum of 2 night for the entire property</p>
-                            <ul>
+                            <ul style={{listStyleType:'none'}}>
                                 <li>May - September: 550 RON/night </li>
                                 <li>Octomber - April: 750 RON/night </li>
                                 <li>Legal holidays: minimun book is of 3 nights plus 20% normal price</li>
